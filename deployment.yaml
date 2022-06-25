@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-deployment
+spec:
+  # Select the Pods that make up this Deployment.
+  selector:
+    matchLabels:
+      pod-label: hello-world-pod
+  # Define the Pod.
+  template:
+    metadata:
+      labels:
+        pod-label: hello-world-pod
+    spec:
+      containers:
+      - name: hello-world-container
+        image: us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0
+        ports:
+        - containerPort: 8080
+  replicas: 1 # Only run 1 instance of the Pod.
