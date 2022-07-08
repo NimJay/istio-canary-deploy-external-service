@@ -1,9 +1,9 @@
 # With this ServiceEntry, we're instructing the mesh to
-# direct requests (from the mesh) for v2.example.com the mesh to 1.2.3.4 (an IP address).
+# direct requests (from the mesh) for v2.example.com to 1.2.3.4 (an IP address).
 apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
 metadata:
-  name: external-svc-https
+  name: my-service-entry
 spec:
   hosts:
   - v2.example.com
